@@ -62,6 +62,7 @@ body {
   }
   .next-btn, .restart-btn {
     margin-top: 20px;
+    width: 50vh;
     font-size: 30px;
     padding: 20px 20px;
     border: 2px solid black;
@@ -124,6 +125,11 @@ body {
 }
 .result-container{
     background-image: url(images/personality-quiz.webp);
+    padding: 40px;
+    margin: 5%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
 }
 button:hover {
     background-color: #0056b3;

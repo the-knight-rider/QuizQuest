@@ -1,49 +1,49 @@
 const questions = [
-    // {
-    //   question: "What is 2 + 2?",
-    //   options: ["3", "4", "5", "6"],
-    //   answer: "4"
-    // },
-    // {
-    //   question: "What is the capital of France?",
-    //   options: ["Madrid", "Berlin", "Paris", "Rome"],
-    //   answer: "Paris"
-    // },
-    // {
-    //   question: "Who wrote 'Romeo and Juliet'?",
-    //   options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Leo Tolstoy"],
-    //   answer: "William Shakespeare"
-    // },
-    // {
-    //   question: "What is the powerhouse of the cell?",
-    //   options: ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
-    //   answer: "Mitochondria"
-    // },
-    // {
-    //   question: "What is the chemical symbol for water?",
-    //   options: ["H2O", "CO2", "O2", "NaCl"],
-    //   answer: "H2O"
-    // },
-    // {
-    //   question: "Who painted the Mona Lisa?",
-    //   options: ["Pablo Picasso", "Leonardo da Vinci", "Vincent van Gogh", "Michelangelo"],
-    //   answer: "Leonardo da Vinci"
-    // },
-    // {
-    //   question: "Which planet is known as the Red Planet?",
-    //   options: ["Venus", "Mars", "Jupiter", "Saturn"],
-    //   answer: "Mars"
-    // },
-    // {
-    //   question: "What is the largest mammal?",
-    //   options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
-    //   answer: "Blue Whale"
-    // },
-    // {
-    //   question: "Who invented the telephone?",
-    //   options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"],
-    //   answer: "Alexander Graham Bell"
-    // },
+    {
+      question: "What is 2 + 2?",
+      options: ["3", "4", "5", "6"],
+      answer: "4"
+    },
+    {
+      question: "What is the capital of France?",
+      options: ["Madrid", "Berlin", "Paris", "Rome"],
+      answer: "Paris"
+    },
+    {
+      question: "Who wrote 'Romeo and Juliet'?",
+      options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Leo Tolstoy"],
+      answer: "William Shakespeare"
+    },
+    {
+      question: "What is the powerhouse of the cell?",
+      options: ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
+      answer: "Mitochondria"
+    },
+    {
+      question: "What is the chemical symbol for water?",
+      options: ["H2O", "CO2", "O2", "NaCl"],
+      answer: "H2O"
+    },
+    {
+      question: "Who painted the Mona Lisa?",
+      options: ["Pablo Picasso", "Leonardo da Vinci", "Vincent van Gogh", "Michelangelo"],
+      answer: "Leonardo da Vinci"
+    },
+    {
+      question: "Which planet is known as the Red Planet?",
+      options: ["Venus", "Mars", "Jupiter", "Saturn"],
+      answer: "Mars"
+    },
+    {
+      question: "What is the largest mammal?",
+      options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+      answer: "Blue Whale"
+    },
+    {
+      question: "Who invented the telephone?",
+      options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"],
+      answer: "Alexander Graham Bell"
+    },
     {
       question: "What is the national animal of China?",
       options: ["Panda", "Tiger", "Lion", "Elephant"],
@@ -78,7 +78,7 @@ const questions = [
   }
   
   function startTimer() {
-    timeLeft = 1000;
+    timeLeft = 10;
     clearInterval(timer);
     timer = setInterval(updateTimer, 1000);
   }
@@ -102,10 +102,8 @@ const questions = [
     
     if (selectedOption === correctAnswer) {
       score++;
-      alert("Correct!");
-    } else {
-      alert("Incorrect!");
-    }
+      
+    } 
     
     currentQuestion++;
     
