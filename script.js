@@ -51,16 +51,29 @@ const questions = [
     }
   ];
   
+ 
+
   let currentQuestion = 0;
   let timeLeft = 10;
   let timer;
   let score = 0;
+  let timerPaused = false; // Added
   
   function displayQuestion() {
     const quizContainer = document.getElementById("quiz-container");
     const resultContainer = document.getElementById("result-container");
     const questionElement = document.getElementById("question");
     const optionsElement = document.getElementById("options");
+    const answerStatusElement = document.getElementById("answer-status"); // Added
+    
+    // Clear the correct/incorrect message
+    answerStatusElement.textContent = ""; // Added
+    
+    // Enable all option buttons
+    const optionButtons = document.querySelectorAll("#options button");
+    optionButtons.forEach(button => {
+      button.disabled = false;
+    });
     
     quizContainer.classList.remove("hidden");
     resultContainer.classList.add("hidden");
@@ -70,7 +83,7 @@ const questions = [
     questions[currentQuestion].options.forEach(option => {
       const button = document.createElement("button");
       button.textContent = option;
-      button.onclick = checkAnswer;
+      button.onclick = () => selectOption(option);
       optionsElement.appendChild(button);
     });
     
@@ -84,34 +97,46 @@ const questions = [
   }
   
   function updateTimer() {
-    const timerElement = document.getElementById("time");
-    timerElement.textContent = timeLeft;
-    
-    if (timeLeft === 0) {
-      clearInterval(timer);
-      checkAnswer();
-    } else {
-      timeLeft--;
+    if (!timerPaused) { // Added condition to check if the timer is paused
+      const timerElement = document.getElementById("time");
+      timerElement.textContent = timeLeft;
+  
+      if (timeLeft === 0) {
+        clearInterval(timer);
+        selectOption(null);
+      } else {
+        timeLeft--;
+      }
     }
   }
   
-  function checkAnswer(event) {
-    clearInterval(timer);
-    const selectedOption = event ? event.target.textContent : null;
+  function selectOption(selectedOption) {
     const correctAnswer = questions[currentQuestion].answer;
-    
+    const optionButtons = document.querySelectorAll("#options button");
+  
+    // Disable all option buttons
+    optionButtons.forEach(button => {
+      button.disabled = true;
+    });
+  
+    timerPaused = true; // Pause the timer
+  
     if (selectedOption === correctAnswer) {
+      document.getElementById("answer-status").textContent = "Correct!";
       score++;
-      
-    } 
-    
-    currentQuestion++;
-    
-    if (currentQuestion < questions.length) {
-      displayQuestion();
     } else {
-      showResult();
+      document.getElementById("answer-status").textContent = "Incorrect!";
     }
+  
+    setTimeout(() => {
+      timerPaused = false; // Resume the timer
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        displayQuestion();
+      } else {
+        showResult();
+      }
+    }, 3000);
   }
   
   function showResult() {
@@ -130,7 +155,7 @@ const questions = [
     displayQuestion();
   }
   
-  document.getElementById("next-btn").addEventListener("click", checkAnswer);
+  document.getElementById("next-btn").addEventListener("click", selectOption);
   document.getElementById("restart-btn").addEventListener("click", restartQuiz);
   
   displayQuestion();
