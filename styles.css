@@ -62,7 +62,7 @@ body {
   }
   .next-btn, .restart-btn {
     margin-top: 20px;
-    width: 50vh;
+    width: 200px;
     font-size: 30px;
     padding: 20px 20px;
     border: 2px solid black;
