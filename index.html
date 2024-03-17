@@ -9,29 +9,26 @@
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <div class="quizquest">
-                QuizQuest
-            </div>
-            <div class="nav-options">
-                <ul>
-                    <li><a href="#" >Home</a></li>
-                    <li><a href="#" >About</a></li>
-                    <li><a href="#" >Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <div class="container">
-        <div class="quiz-container hidden" id="quiz-container">
-            <h2 id="question">Welcome to the Quiz!</h2>
-            <div id="options"></div>
-            <button id="next-btn" class="hidden">Next Question</button>
+        <div class="margin">
+            <div id="quiz-container" class="quiz-container">
+                <h1 class="quiz-title">Quiz Quest</h1>
+                <div id="question" class="question"></div>
+                <div id="options" class="options"></div>
+                <button id="next-btn" class="next-btn">Next</button>
+                <div class="timer-box">
+                    <div id="timer" class="timer">Timer: </div>
+                    <div class="time"> <span id="time" class="time">10</span> seconds</div>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div id="result-container" class="result-container hidden">
+        <h2 class="result-title">Quiz Result</h2>
+        <div id="score" class="score"></div>
+        <button id="restart-btn" class="restart-btn">Restart</button>
+    </div>
+    </div>
     <script src="script.js"></script>
 </body>
 

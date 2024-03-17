@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
 
 // Start the server
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

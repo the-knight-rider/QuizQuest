@@ -1,19 +1,137 @@
-.container{
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbf4f4;
+    background-image:url(images/istockphoto-1582361888-170667a.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    /* background-position-y: -70px; */
+}
+.quiz-container{
+    padding: 10vh;
+}
+.container {
+    max-width: 110vh;
+   
+    margin: auto;
+    /* padding: 70px; */
+    background-color: #000000;
+    background-image: url(images/personality-quiz.webp);
+    background-position: center;
+    background-size:cover;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.quiz-title {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+
+.question {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  .options{
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     justify-content: center;
-    align-items: center;
-}
-.nav-options ul li{
-    list-style-type: none;
+    /* width: 50vh; */
+  }
+  
+  .options button {
+    margin-top: 15px;
+    font-size: 20px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 100px;
+    background-color: #fff200;
+    color: rgb(45, 45, 45);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .options button:hover {
+    background-color: #45a049;
+  }
+  .next-btn, .restart-btn {
+    margin-top: 20px;
+    font-size: 30px;
+    padding: 20px 20px;
+    border: 2px solid black;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .next-btn:hover, .restart-btn:hover {
+    background-color: #de3a09;
+  }
+  
+  .timer {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #000000;
     
-}
-.nav-options ul li a{
-    margin: 20px;
+  }
+  .time{
     
+    font-size: 20px;
+    color: #ff0000;
+    
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .result-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .score {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+  }
+  
+.result-container button {
+    display: block;
+    
+    width: 100%;
+    /* margin: 50px; */
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
-.nav-options ul{
-    display: flex;
-    justify-content:space-around;
+.result-container{
+    background-image: url(images/personality-quiz.webp);
+}
+button:hover {
+    background-color: #0056b3;
+}
 
+#result {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
 }
