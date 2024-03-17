@@ -1,19 +1,12 @@
-// Import the required modules
-const http = require('http');
+const express = require('express');
+const app = express();
 
-// Define the port number
-const port = 3000;
-
-// Create the HTTP server
-const server = http.createServer((req, res) => {
-  // Set the response status code and headers
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-
-  // Send the response body
-  res.end('Hello, Wrld!\n');
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
-// Start listening for incoming requests on the specified port
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+// Start the server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
